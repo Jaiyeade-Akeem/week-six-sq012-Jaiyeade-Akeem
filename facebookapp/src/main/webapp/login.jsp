@@ -37,7 +37,7 @@
                         <button type="submit" id="btn-login">Login</button>
                         <a href="/">Forgotten password?</a> <br>
                         <p>Don't have an account? Register <a href="register.jsp">here</a>!</p>
-<%--                        <a href="./register.html">Signup for CBOOKSOCIAL?</a>--%>
+<%--
                     </form>
                 </div>
             </div>

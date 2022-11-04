@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>CBOOKSOCIAL - Connect your world</title>
+    <title>Facebook_mini_app - Connect your world</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
@@ -99,7 +99,7 @@
                     <div id="post-form-body">
                         <img class="avatar-small" src="img/atlantic-3929616_640.jpg">
                         <div id="post-form-editor" id="post-text" contenteditable>
-
+                            <input type="text" name="userposts" value="post">
                         </div>
                     </div>
                     <div id="post-form-footer">
@@ -119,7 +119,7 @@
                                 <a href="#" id="button-public">
                                     <i class="fa fa-globe" aria-hidden="true"></i> Public <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" id="button-post">
+                                <a href="PostServlet" id="button-post">
                                     Post
                                 </a>
                             </div>

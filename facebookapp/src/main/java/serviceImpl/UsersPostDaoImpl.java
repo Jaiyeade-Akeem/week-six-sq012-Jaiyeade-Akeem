@@ -13,13 +13,14 @@ public class UsersPostDaoImpl implements UsersPostDAO {
 
     @Override
     public void addPost(User user, Post post) throws SQLException {
+        post.setUser(user);
         UserDaoImpl userdao = new UserDaoImpl();
         DbConnectionImpl dbconnect = new DbConnectionImpl();
         Connection con = dbconnect.connect();
         PreparedStatement ps = con.prepareStatement("INSERT INTO user_posts (post_text, user_id) " +
                 "VALUES ( ?, ? )");
         ps.setString(1, post.getPostText());
-        ps.setInt(2,userdao.getUser(user).getId());
+        ps.setInt(2,userdao.getUser(post.getUser()).getId());
     }
 
     @Override
