@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
 <%--    <nav class="container-fluid" id="main-nav-login">--%>
 <%--        <div class="container">--%>
 <%--            <div class="row">--%>
@@ -37,7 +38,7 @@
                         <button type="submit" id="btn-login">Login</button>
                         <a href="/">Forgotten password?</a> <br>
                         <p>Don't have an account? Register <a href="register.jsp">here</a>!</p>
-<%--
+
                     </form>
                 </div>
             </div>

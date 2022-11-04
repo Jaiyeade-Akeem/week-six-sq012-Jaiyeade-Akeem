@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.Arrays;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -25,17 +26,16 @@ public class LoginServlet extends HttpServlet {
 
             String username = request.getParameter("user-login-name");
             String password = request.getParameter("user-login-password");
-            User user = new User();
-            user.setUserName(username);
-            user.setPassword(password);
+//            User user = new User();
+//            user.setUserName(username);
+//            user.setPassword(password);
 
             UserDaoImpl userdao = new UserDaoImpl();
-            ResultSet rs = userdao.loginUser(user);
+            User user = userdao.loginUser(username,password);
 
-            if (rs.next()){
-
+            if (user != null){
                 HttpSession se = request.getSession();
-                se.setAttribute("user-login-name", username);
+                se.setAttribute("userLoggedInDetails", user);
                 RequestDispatcher rd = request.getRequestDispatcher("news-feed.jsp");
                 rd.forward(request, response);
             }

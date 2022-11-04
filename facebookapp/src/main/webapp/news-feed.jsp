@@ -1,3 +1,5 @@
+<%@ page import="models.User" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 
@@ -15,6 +17,10 @@
 </head>
 
 <body>
+<%
+    HttpSession se = request.getSession();
+    User userDetails = (User)se.getAttribute("userLoggedInDetails");
+%>
     <nav class="container-fluid" id="main-nav-user-home">
         <div class="row">
             <div class="col-md-6" id="user-tools-left">
@@ -27,7 +33,7 @@
             <div class="col-md-6" id="user-tools-right">
                 <ul>
                     <li>
-                        <a href="./profile.html"><img class="avatar24" src="./img/atlantic-3929616_640.jpg">welcome akeem</a>
+                        <a href="./profile.html"><img class="avatar24" src="./img/atlantic-3929616_640.jpg">welcome <%= userDetails.getFirstName()%>></a>
                     </li>
                     <li>
                         <a href="/"><i class="fa fa-users" aria-hidden="true"></i></a>

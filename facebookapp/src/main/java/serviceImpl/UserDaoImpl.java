@@ -8,29 +8,31 @@ import java.sql.*;
 public class UserDaoImpl implements UserDAO {
 
     @Override
-    public User getUser(User user) throws SQLException {
-        DbConnectionImpl dbconnect = new DbConnectionImpl();
-        Connection con = dbconnect.connect();
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
-        ps.setString(1,user.getUserName());
-        ResultSet set = ps.executeQuery();
-        user.setId(set.getInt(1));
-        user.setTime(set.getTimestamp(7));
-        return user;
-    }
-
-    @Override
-    public ResultSet loginUser(User user) throws SQLException {
+    public User loginUser(String username, String password) throws SQLException {
+        User user = null;
         DbConnectionImpl dbconnect = new DbConnectionImpl();
         Connection con = dbconnect.connect();
 
         PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE username = ? and upswd = ?");
-        ps.setString(1, user.getUserName());
-        ps.setString(2,user.getPassword());
+        ps.setString(1, username);
+        ps.setString(2, password);
+        ResultSet rs = ps.executeQuery();
 
-            return ps.executeQuery();
 
+        if (rs.next()){
+            user = new User();
+            user.setId(rs.getInt(1));
+            user.setFirstName(rs.getString(2));
+            user.setLastName(rs.getString(3));
+            user.setUserName(rs.getString(4));
+            user.setEmail(rs.getString(5));
+            user.setPassword(rs.getString(6));
+            user.setTime(rs.getTimestamp(7));
 
+        } else{
+
+        }
+        return user;
     }
 
     @Override
