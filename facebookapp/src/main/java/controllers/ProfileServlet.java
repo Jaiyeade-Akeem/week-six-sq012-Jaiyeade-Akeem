@@ -45,7 +45,7 @@ public class ProfileServlet extends HttpServlet {
 
         userdao.registerUser(user);
 
-        out.println("<font color= black>You have successfully registered!!</font><br>");
+        out.println("<font color= black>Hello " + user.getUserName() + " you have successfully registered!!</font><br>");
         out.println("<a href = login.jsp> click here to continue</a>");
 
     }

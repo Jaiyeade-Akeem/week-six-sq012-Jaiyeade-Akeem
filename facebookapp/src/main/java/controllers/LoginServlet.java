@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 
                 HttpSession se = request.getSession();
                 se.setAttribute("user-login-name", username);
-                RequestDispatcher rd = request.getRequestDispatcher("profile.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("news-feed.jsp");
                 rd.forward(request, response);
             }
             else {

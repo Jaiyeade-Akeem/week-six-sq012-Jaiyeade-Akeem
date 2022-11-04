@@ -1,19 +1,23 @@
 package serviceImpl;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-import models.Comments;
-import models.Post;
 import models.User;
-import views.DbConnection;
 import views.UserDAO;
 
-import java.io.PrintWriter;
 import java.sql.*;
-import java.util.List;
 
 public class UserDaoImpl implements UserDAO {
+
+    @Override
+    public User getUser(User user) throws SQLException {
+        DbConnectionImpl dbconnect = new DbConnectionImpl();
+        Connection con = dbconnect.connect();
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
+        ps.setString(1,user.getUserName());
+        ResultSet set = ps.executeQuery();
+        user.setId(set.getInt(1));
+        user.setTime(set.getTimestamp(7));
+        return user;
+    }
 
     @Override
     public ResultSet loginUser(User user) throws SQLException {
@@ -24,9 +28,8 @@ public class UserDaoImpl implements UserDAO {
         ps.setString(1, user.getUserName());
         ps.setString(2,user.getPassword());
 
-            ResultSet set = ps.executeQuery();
+            return ps.executeQuery();
 
-              return set;
 
     }
 
@@ -34,7 +37,8 @@ public class UserDaoImpl implements UserDAO {
     public void registerUser(User user) throws SQLException {
         DbConnectionImpl dbconnect = new DbConnectionImpl();
         Connection con = dbconnect.connect();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO users (firstname, lastname, username, uemail, upswd) VALUES (?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO users (firstname, lastname, username, uemail, upswd)" +
+                " VALUES (?,?,?,?,?)");
 
         ps.setString(1, user.getFirstName());
         ps.setString(2,user.getLastName());
@@ -46,13 +50,12 @@ public class UserDaoImpl implements UserDAO {
     }
 
     @Override
-    public List<Post> viewAllPost(User user) throws SQLException {
+    public ResultSet viewAllPost(User user) throws SQLException {
         DbConnectionImpl dbconnect = new DbConnectionImpl();
         Connection con = dbconnect.connect();
-
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM user_posts");
-        ps.setString(1, user.ge);
-        ps.setString(2,user.getPassword());
+        // select all posts, their corresponding users and creation time
+        PreparedStatement ps = con.prepareStatement("SELECT users.username, user_posts.post_text, " +
+                "user_posts.created_at FROM user_posts JOIN users ON users.id = user_posts.user_id");
 
         ResultSet set = ps.executeQuery();
 
@@ -60,7 +63,15 @@ public class UserDaoImpl implements UserDAO {
     }
 
     @Override
-    public List<Comments> viewAllComment(User user) {
-        return null;
+    public ResultSet viewAllComment(User user) throws SQLException {
+        DbConnectionImpl dbconnect = new DbConnectionImpl();
+        Connection con = dbconnect.connect();
+        // select all posts, their corresponding users and creation time
+        PreparedStatement ps = con.prepareStatement("SELECT user_posts.post_text, user_posts.created_at, user_comments.comment_text, " +
+                "user_comments.created_at FROM user_posts JOIN user_comments  on user_posts.id = user_comments.post_id;");
+
+        ResultSet set = ps.executeQuery();
+
+        return set;
     }
 }

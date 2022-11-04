@@ -3,17 +3,12 @@ package serviceImpl;
 import models.Post;
 import models.User;
 import views.DbConnection;
-import views.UserDAO;
 import views.UsersCommentDAO;
-import views.UsersPostDAO;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 
-public class UsersCommentDaoImpl implements DbConnection,UsersCommentDAO {
-    @Override
-    public Connection connect() {
-        return null;
-    }
+public class UsersCommentDaoImpl implements UsersCommentDAO {
 
     @Override
     public void addComment(User user, Post post, String message) {
@@ -26,8 +21,8 @@ public class UsersCommentDaoImpl implements DbConnection,UsersCommentDAO {
     }
 
     @Override
-    public void viewComment(User user, Post post) {
-
+    public ResultSet viewComment(User user, Post post) {
+        return null;
     }
 
     @Override

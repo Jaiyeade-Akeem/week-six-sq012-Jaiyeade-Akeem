@@ -2,6 +2,8 @@ package models;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 @Data
 public class User {
     Integer id;
@@ -10,5 +12,6 @@ public class User {
     String userName;
     String email;
     String password;
+    Timestamp time;
 
 }

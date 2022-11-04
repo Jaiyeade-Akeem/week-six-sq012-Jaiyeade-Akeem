@@ -9,7 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923d5c74-cfb4-40d8-8413-107fee965628" name="Changes" comment="updated" />
+    <list default="true" id="923d5c74-cfb4-40d8-8413-107fee965628" name="Changes" comment="updated">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/controllers/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/controllers/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/controllers/ProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/DbConnectionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/DbConnectionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UsersCommentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UsersCommentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UsersPostaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UsersPostDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/views/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/views/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/views/UsersCommentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/views/UsersCommentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebookapp/src/main/java/views/UsersPostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebookapp/src/main/java/views/UsersPostDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -250,7 +263,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667108172942</updated>
       <workItem from="1667108174376" duration="268000" />
-      <workItem from="1667366283496" duration="62354000" />
+      <workItem from="1667366283496" duration="78803000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1667397875064</created>
@@ -266,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667419324852</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated">
+      <created>1667528225715</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667528225715</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

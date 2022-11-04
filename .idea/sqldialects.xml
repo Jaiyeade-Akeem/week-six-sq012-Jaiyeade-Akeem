@@ -3,6 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/facebookapp/src/main/java/controllers/LoginServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UserDaoImpl.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UsersPostaoImpl.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/facebookapp/src/main/java/serviceImpl/UsersPostDaoImpl.java" dialect="GenericSQL" />
   </component>
 </project>
